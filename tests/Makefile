@@ -6,7 +6,7 @@
 #    By: tzhou <tzhou@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/10 19:51:18 by tzhou             #+#    #+#              #
-#    Updated: 2017/02/14 01:28:30 by tzhou            ###   ########.fr        #
+#    Updated: 2017/02/14 04:32:27 by tzhou            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,15 +32,15 @@ all: $(NAME)
 
 $(NAME): $(LIBUNIT)
 	gcc $(CFLAGS) $(SRC) -I ../includes -L .. -lunit -o test
-	./test
 
 $(LIBUNIT):
 	make -C.. -f Makefile libunit.a
 
 clean:
 	make clean -C.. Makefile
+
 fclean: 
 	/bin/rm -f $(NAME)
-	make fclean - C.. Makefile
+	make -C.. -f Makefile fclean
 
 re: fclean $(NAME)

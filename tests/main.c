@@ -6,19 +6,20 @@
 /*   By: tzhou <tzhou@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/13 22:46:54 by tzhou             #+#    #+#             */
-/*   Updated: 2017/02/13 23:12:26 by tzhou            ###   ########.fr       */
+/*   Updated: 2017/02/14 01:41:57 by tzhou            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libunit.h"
 #include "test.h"
 
+int	g_total_tests = 0;
+
 int	main(void)
 {
 	int count;
 
 	print_banner();
-	g_total_tests = 0;
 	count = 0;
 	count += live_test_launcher();
 	count += segv_test_launcher();
