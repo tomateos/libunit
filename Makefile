@@ -6,7 +6,7 @@
 #    By: tzhou <tzhou@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/10 19:51:18 by tzhou             #+#    #+#              #
-#    Updated: 2017/02/10 20:16:57 by tzhou            ###   ########.fr        #
+#    Updated: 2017/02/13 20:57:03 by tzhou            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,14 +16,17 @@ CFLAGS = -Wall -Werror -Wextra
 
 DIR = framework/
 
-SRC = *.c
+FSRC = load_test.c launch_tests.c
 
-OBJ = ${SRC:.c=.o}
+MYSRC = my_putchar.c my_putstr.c my_putnbr.c my_strchr.c my_strcmp.c \
+		 my_strdup.c my_strndup.c my_strlen.c my_printf.c
+
+OBJ = ${FSRC:.c=.o} ${MYSRC:.c=.o}
 
 all: $(NAME)
 
 $(NAME):
-	gcc $(CFLAGS) -I includes -c $(addprefix $(DIR), SRC)
+	gcc $(CFLAGS) -I includes -c $(addprefix $(DIR), $(MYSRC) $(FSRC))
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
 
