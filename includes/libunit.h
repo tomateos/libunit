@@ -6,7 +6,7 @@
 /*   By: tzhou <tzhou@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 16:56:20 by tzhou             #+#    #+#             */
-/*   Updated: 2017/02/13 20:59:32 by tzhou            ###   ########.fr       */
+/*   Updated: 2017/02/13 22:52:47 by tzhou            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ typedef	struct			s_unit_test
 }						t_unit_test;
 
 /*
-** 
+** test counter
 */
 
 extern int				g_total_tests;
@@ -45,7 +45,7 @@ extern char const		*g_conversion;
 /*
 ** test framework functions
 */
-
+void					print_banner(void);
 void					load_test(t_unit_test **tests,
 							char *name, int (*f)(void));
 int						launch_tests(t_unit_test **tests);

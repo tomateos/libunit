@@ -6,7 +6,7 @@
 #    By: tzhou <tzhou@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/10 19:51:18 by tzhou             #+#    #+#              #
-#    Updated: 2017/02/13 20:57:03 by tzhou            ###   ########.fr        #
+#    Updated: 2017/02/13 22:56:03 by tzhou            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CFLAGS = -Wall -Werror -Wextra
 
 DIR = framework/
 
-FSRC = load_test.c launch_tests.c
+FSRC = load_test.c launch_tests.c print_banner.c
 
 MYSRC = my_putchar.c my_putstr.c my_putnbr.c my_strchr.c my_strcmp.c \
 		 my_strdup.c my_strndup.c my_strlen.c my_printf.c
