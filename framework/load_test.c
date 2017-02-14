@@ -6,7 +6,7 @@
 /*   By: tzhou <tzhou@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/13 17:44:44 by tzhou             #+#    #+#             */
-/*   Updated: 2017/02/13 21:02:38 by tzhou            ###   ########.fr       */
+/*   Updated: 2017/02/14 04:06:02 by tzhou            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,15 @@ void				load_test(t_unit_test **test, char *name, int (*f)(void))
 {
 	t_unit_test	*temp;
 
-	if (!(temp = *test))
+	if (!(*test))
 	{
-		*test = new_test(name, f);
+
+		temp = new_test(name, f);
+		*test = temp;
 	}
 	else
 	{
+		temp = *test;
 		while (temp->next)
 			temp = temp->next;
 		temp->next = new_test(name, f);

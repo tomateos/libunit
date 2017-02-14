@@ -6,12 +6,14 @@
 /*   By: tzhou <tzhou@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/13 17:45:41 by tzhou             #+#    #+#             */
-/*   Updated: 2017/02/13 21:00:52 by tzhou            ###   ########.fr       */
+/*   Updated: 2017/02/14 05:10:22 by tzhou            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libunit.h"
 
+
+#include <stdio.h>
 static void	get_result(int code)
 {
 	if (code == 0)
@@ -19,7 +21,7 @@ static void	get_result(int code)
 	else if (code == 1)
 		my_printf("[KO]\n");
 	else if (code == 2)
-		my_printf("[SEGV\n]");
+		my_printf("[SEGV]\n");
 	else if (code == 3)
 		my_printf("[BUSE]\n");
 	else
@@ -54,18 +56,7 @@ static int	run_test(int (*f)(void))
 		else if (status == SIGBUS)
 			return (3);
 	}
-	my_printf("\nUndefined behavior, program will now exit\n");
 	exit(1);
-}
-
-void		free_testlist(t_unit_test *tests)
-{
-	if (tests)
-	{
-		free_testlist(tests->next);
-		free(tests->name);
-		free(tests);
-	}
 }
 
 int			launch_tests(t_unit_test **tests)
@@ -78,14 +69,12 @@ int			launch_tests(t_unit_test **tests)
 	count = 0;
 	while (temp)
 	{
-		my_printf("%s : ", temp->name);
+		my_printf("> %s : ", temp->name);
 		if ((code = run_test(temp->f)) == 0)
 			count++;
 		g_total_tests++;
 		get_result(code);
 		temp = temp->next;
 	}
-	free_testlist(*tests);
-	free(tests);
 	return (count);
 }
