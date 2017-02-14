@@ -6,7 +6,7 @@
 /*   By: tzhou <tzhou@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/13 22:46:54 by tzhou             #+#    #+#             */
-/*   Updated: 2017/02/14 01:41:57 by tzhou            ###   ########.fr       */
+/*   Updated: 2017/02/14 14:46:31 by tzhou            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,8 @@ int	main(void)
 	count += segv_test_launcher();
 	count += buse_test_launcher();
 	my_printf("\n%d / %d tests checked\n", count, g_total_tests);
-	return (0);
+	if (count == g_total_tests)
+		return (0);
+	else
+		return (-1);
 }
