@@ -6,7 +6,7 @@
 #    By: tzhou <tzhou@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/10 19:51:18 by tzhou             #+#    #+#              #
-#    Updated: 2017/02/14 17:37:57 by tzhou            ###   ########.fr        #
+#    Updated: 2017/02/14 18:35:18 by tzhou            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,35 +14,38 @@ NAME = test
 
 LIBUNIT = libunit.a
 
+LIBFT = libft.a
+
+FTPATH = /nfs/2016/t/tzhou/Projects/RUSHES/LIBUNIT/libunit/libft/
+UNPATH = /nfs/2016/t/tzhou/Projects/RUSHES/LIBUNIT/libunit/
+
 CFLAGS = -Wall -Werror -Wextra
 
-IFLAGS = -I../includes
+IFLAGS = -I$(addsuffix includes, $(UNPATH)) -I$(FTPATH)
 
-LFLAGS = -L.. -lunit
+LFLAGS = -L$(UNPATH) -lunit -L$(FTPATH) -lft
 
-LSRC = 00_launcher.c 01_ok_test.c 02_ko_test.c
+STRLENSRC = 00_launcher.c 01_basic_test.c 02_null_test.c 03_large_test.c
 
-SSRC = 00_launcher.c 01_segv_test.c
-
-BSRC = 00_launcher.c 01_buse_test.c
-
-SRC = main.c $(addprefix live_test/, $(LSRC)) $(addprefix segv_test/, $(SSRC))\
-	  $(addprefix buse_test/, $(BSRC))
+SRC = main.c $(addprefix strlen/, $(STRLENSRC))
 
 all: $(NAME)
 
-$(NAME): $(LIBUNIT)
+$(NAME): $(LIBUNIT) $(LIBFT)
 	gcc $(CFLAGS) $(SRC) $(IFLAGS) $(LFLAGS) -o test
-	./test
+
 
 $(LIBUNIT):
-	make -C.. $(LIBUNIT)
+	make -C$(UNPATH) $(LIBUNIT)
 
+$(LIBFT):
+	make -C$(FTPATH) $(LIBFT)
 clean:
-	make -C.. clean
-
+	make -C$(FTPATH) clean
+	make -C$(UNPATH) clean
 fclean: 
 	/bin/rm -f $(NAME)
-	make -C.. fclean
+	make -C$(FTPATH) fclean
+	make -C$(UNPATH) fclean
 
 re: fclean $(NAME)
