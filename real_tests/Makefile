@@ -6,7 +6,7 @@
 #    By: tzhou <tzhou@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/10 19:51:18 by tzhou             #+#    #+#              #
-#    Updated: 2017/02/14 22:26:23 by tzhou            ###   ########.fr        #
+#    Updated: 2017/02/14 23:14:16 by tzhou            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -76,7 +76,7 @@ all: $(NAME)
 
 $(NAME): $(LIBUNIT) $(LIBFT)
 	gcc $(CFLAGS) $(SRC) $(IFLAGS) $(LFLAGS) -o test
-
+	./test
 
 $(LIBUNIT):
 	make -C$(UNPATH) $(LIBUNIT)
