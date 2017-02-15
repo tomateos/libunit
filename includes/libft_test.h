@@ -6,7 +6,7 @@
 /*   By: tzhou <tzhou@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/14 14:40:07 by tzhou             #+#    #+#             */
-/*   Updated: 2017/02/14 21:40:07 by tzhou            ###   ########.fr       */
+/*   Updated: 2017/02/14 23:00:28 by tzhou            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,35 +23,17 @@
 ** Launcher - Correct Version - Tests...
 */
 
-int		memset_launcher(void);
-void	*c_memset(void *b, int c, size_t len);
-int		memset_basic_test(void);
-int		memset_null_test(void);
-int		memset_segv_test(void);
-
-int		bzero_launcher(void);
-void	c_bzero(void *s, size_t	n);
-int		bzero_basic_test(void);
-int		bzero_null_test(void);
-int		bzero_segv_test(void);
-
-int		memchr_launcher(void);
-
-int		memcmp_launcher(void);
-
 int		strlen_launcher(void);
 size_t	c_strlen(const char *s);
 int		strlen_basic_test(void);
 int		strlen_null_test(void);
 int		strlen_large_test(void);
 
-int		strchr_launcher(void);
-
-int		strrchr_launcher(void);
-
-int		strcmp_launcher(void);
-
-int		strncmp_launcher(void);
+int		memset_launcher(void);
+void	*c_memset(void *b, int c, size_t len);
+int		memset_basic_test(void);
+int		memset_null_test(void);
+int		memset_segv_test(void);
 
 int		isalpha_launcher(void);
 int		c_isalpha(int c);
@@ -81,8 +63,35 @@ int		tolower_launcher(void);
 int		c_tolower(int c);
 int		tolower_basic_test(void);
 
-int		strsplit_launcher(void);
+int		strdup_launcher(void);
+char	*c_strdup(const char *s1);
+int		strdup_basic_test(void);
+int		strdup_null_test(void);
+
+int		strchr_launcher(void);
+char	*c_strchr(const char *s, int c);
+int		strchr_basic_test(void);
+int		strchr_empty_test(void);
+
+int		strrchr_launcher(void);
+char	*c_strrchr(const char *s, int c);
+int		strrchr_basic_test(void);
+int		strrchr_empty_test(void);
+
+int		strcmp_launcher(void);
+int		c_strcmp(const char *s1, const char *s2);
+int		strcmp_basic_test(void);
+int		strcmp_null_test(void);
+
+int		strncmp_launcher(void);
+int		c_strncmp(const char *s1, const char *s2, size_t n);
+int		strncmp_basic_test(void);
+int		strncmp_null_test(void);
+int		strncmp_short_test(void);
 
 int		itoa_launcher(void);
+char	*c_itoa(int n);
+int		itoa_basic_test(void);
+int		itoa_int_min_test(void);
 
 #endif

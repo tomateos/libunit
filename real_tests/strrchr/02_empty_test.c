@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_banner.c                                     :+:      :+:    :+:   */
+/*   02_empty_test.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tzhou <tzhou@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/13 22:52:54 by tzhou             #+#    #+#             */
-/*   Updated: 2017/02/14 23:11:49 by tzhou            ###   ########.fr       */
+/*   Created: 2017/02/14 22:41:40 by tzhou             #+#    #+#             */
+/*   Updated: 2017/02/14 22:45:50 by tzhou            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libunit.h"
+#include "libft_test.h"
+#include "libft.h"
 
-void	print_banner(void)
+int	strrchr_empty_test(void)
 {
-	my_printf("\x1B[36m");
-	my_printf("*********************************\n");
-	my_printf("****     42 - Unit Tests     ****\n");
-	my_printf("*********************************\n");
-	my_printf("\x1b[0m");
+	char	*str;
+	char	*a;
+
+	str = "Choose your office";
+	a = ft_strrchr(str, 'z');
+	if (a)
+		return (-1);
+	return (0);
 }

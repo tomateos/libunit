@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_banner.c                                     :+:      :+:    :+:   */
+/*   02_null_test.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tzhou <tzhou@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/13 22:52:54 by tzhou             #+#    #+#             */
-/*   Updated: 2017/02/14 23:11:49 by tzhou            ###   ########.fr       */
+/*   Created: 2017/02/14 22:53:54 by tzhou             #+#    #+#             */
+/*   Updated: 2017/02/14 22:55:11 by tzhou            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libunit.h"
+#include "libft_test.h"
+#include "libft.h"
 
-void	print_banner(void)
+int	strdup_null_test(void)
 {
-	my_printf("\x1B[36m");
-	my_printf("*********************************\n");
-	my_printf("****     42 - Unit Tests     ****\n");
-	my_printf("*********************************\n");
-	my_printf("\x1b[0m");
+	char	*s;
+
+	s = ft_strdup("");
+	if (*s)
+		return (-1);
+	return (0);
 }

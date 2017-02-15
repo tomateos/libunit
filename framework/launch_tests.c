@@ -6,7 +6,7 @@
 /*   By: tzhou <tzhou@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/13 17:45:41 by tzhou             #+#    #+#             */
-/*   Updated: 2017/02/14 21:47:23 by tzhou            ###   ########.fr       */
+/*   Updated: 2017/02/14 23:10:10 by tzhou            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 static void	get_result(int code)
 {
 	if (code == 0)
-		my_printf("[OK]\n");
+		my_printf("\x1B[32m[OK]\n\x1B[0m");
 	else if (code == 1)
-		my_printf("[KO]\n");
+		my_printf("\x1B[31m[KO]\n\x1B[0m");
 	else if (code == 2)
-		my_printf("[SEGV]\n");
+		my_printf("\x1B[31m[SEGV]\n\x1B[0m");
 	else if (code == 3)
-		my_printf("[BUSE]\n");
+		my_printf("\x1B[31m[BUSE]\n\x1B[0m");
 	else
 	{
 		my_printf("\nUnknown test code, program will now exit\n");

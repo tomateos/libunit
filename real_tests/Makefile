@@ -6,7 +6,7 @@
 #    By: tzhou <tzhou@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/10 19:51:18 by tzhou             #+#    #+#              #
-#    Updated: 2017/02/14 21:39:42 by tzhou            ###   ########.fr        #
+#    Updated: 2017/02/14 22:26:23 by tzhou            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,6 +43,18 @@ TOUPPERSRC = 00_launcher.c 01_basic_test.c
 
 TOLOWERSRC = 00_launcher.c 01_basic_test.c
 
+STRDUPSRC = 00_launcher.c 01_basic_test.c 02_null_test.c
+
+STRCHRSRC = 00_launcher.c 01_basic_test.c 02_empty_test.c
+
+STRRCHRSRC = 00_launcher.c 01_basic_test.c 02_empty_test.c
+
+STRCMPSRC = 00_launcher.c 01_basic_test.c 02_null_test.c
+
+STRNCMPSRC = 00_launcher.c 01_basic_test.c 02_null_test.c 03_short_test.c
+
+ITOASRC = 00_launcher.c 01_basic_test.c 02_int_min_test.c
+
 SRC = main.c \
 	  $(addprefix strlen/, $(STRLENSRC)) \
 	  $(addprefix memset/, $(MEMSETSRC)) \
@@ -53,6 +65,12 @@ SRC = main.c \
 	  $(addprefix isprint/, $(ISPRINTSRC)) \
 	  $(addprefix toupper/, $(TOUPPERSRC)) \
 	  $(addprefix tolower/, $(TOLOWERSRC)) \
+	  $(addprefix strdup/, $(STRDUPSRC)) \
+	  $(addprefix strchr/, $(STRCHRSRC)) \
+	  $(addprefix strrchr/, $(STRRCHRSRC)) \
+	  $(addprefix strcmp/, $(STRCMPSRC)) \
+	  $(addprefix strncmp/, $(STRNCMPSRC)) \
+	  $(addprefix itoa/, $(ITOASRC)) \
 
 all: $(NAME)
 
