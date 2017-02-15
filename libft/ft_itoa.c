@@ -6,7 +6,7 @@
 /*   By: tzhou <tzhou@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/02 15:05:11 by tzhou             #+#    #+#             */
-/*   Updated: 2016/12/02 15:48:32 by tzhou            ###   ########.fr       */
+/*   Updated: 2017/02/14 23:38:25 by tzhou            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,10 @@ char		*ft_itoa(int n)
 	if (n < 0)
 		neg = 1;
 	len = get_nbr_len(n, base, neg);
-	output = (char*)malloc(sizeof(char) * (len + 1));
+	output = (char*)malloc(sizeof(char) * (len));
 	if (!output)
 		return (NULL);
-	output[len--] = 0;
+	output[len] = 0;
 	if (neg)
 		output[0] = '-';
 	while (n >= base || n <= -base)

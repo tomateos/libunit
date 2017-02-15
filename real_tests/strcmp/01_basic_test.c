@@ -6,7 +6,7 @@
 /*   By: tzhou <tzhou@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/14 15:28:35 by tzhou             #+#    #+#             */
-/*   Updated: 2017/02/14 22:32:55 by tzhou            ###   ########.fr       */
+/*   Updated: 2017/02/14 23:35:17 by tzhou            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ int	strcmp_basic_test(void)
 	char	*str1;
 	char	*str2;
 
-	str1 = "apples";
-	str2 = "oranges";
+	str1 = "application";
+	str2 = "app";
 	if (c_strcmp(str1, str2) == ft_strcmp(str1, str2))
 		return (0);
 	else

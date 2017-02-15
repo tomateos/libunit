@@ -6,7 +6,7 @@
 /*   By: tzhou <tzhou@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/03 16:21:55 by tzhou             #+#    #+#             */
-/*   Updated: 2016/12/03 16:24:46 by tzhou            ###   ########.fr       */
+/*   Updated: 2017/02/14 23:39:52 by tzhou            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memset(void *b, int c, size_t len)
 
 	temp = (unsigned char*)b;
 	i = 0;
-	while (i < len)
+	while (i <= len)
 		temp[i++] = c;
 	return (b);
 }

@@ -6,7 +6,7 @@
 /*   By: tzhou <tzhou@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/14 15:28:35 by tzhou             #+#    #+#             */
-/*   Updated: 2017/02/14 20:53:55 by tzhou            ###   ########.fr       */
+/*   Updated: 2017/02/14 23:41:31 by tzhou            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ int	memset_basic_test(void)
 	char	*str1;
 	char	*str2;
 
-	str1 = my_strdup("jump");
-	str2 = my_strdup("dash");
-	str1 = c_memset(str1, 97, 5);
-	str2 = ft_memset(str2, 97, 5);
+	str1 = my_strdup("jumper pants");
+	str2 = my_strdup("dashingpants");
+	str1 = c_memset(str1, 97, 6);
+	str2 = ft_memset(str2, 97, 6);
 	if (!my_strcmp(str1, str2))
 		return (0);
 	else
