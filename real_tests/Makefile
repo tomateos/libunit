@@ -6,7 +6,7 @@
 #    By: tzhou <tzhou@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/10 19:51:18 by tzhou             #+#    #+#              #
-#    Updated: 2017/02/14 23:14:16 by tzhou            ###   ########.fr        #
+#    Updated: 2017/02/14 23:23:52 by tzhou            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,13 +17,12 @@ LIBUNIT = libunit.a
 LIBFT = libft.a
 
 FTPATH = /nfs/2016/t/tzhou/Projects/RUSHES/LIBUNIT/libunit/libft/
-UNPATH = /nfs/2016/t/tzhou/Projects/RUSHES/LIBUNIT/libunit/
 
 CFLAGS = -Wall -Werror -Wextra
 
-IFLAGS = -I$(addsuffix includes, $(UNPATH)) -I$(FTPATH)
+IFLAGS = -I ../includes -I$(FTPATH)
 
-LFLAGS = -L$(UNPATH) -lunit -L$(FTPATH) -lft
+LFLAGS = -L.. -lunit -L$(FTPATH) -lft
 
 STRLENSRC = 00_launcher.c 01_basic_test.c 02_null_test.c 03_large_test.c
 
@@ -79,16 +78,16 @@ $(NAME): $(LIBUNIT) $(LIBFT)
 	./test
 
 $(LIBUNIT):
-	make -C$(UNPATH) $(LIBUNIT)
+	make -C.. $(LIBUNIT)
 
 $(LIBFT):
 	make -C$(FTPATH) $(LIBFT)
 clean:
 	make -C$(FTPATH) clean
-	make -C$(UNPATH) clean
+	make -C.. clean
 fclean: 
 	/bin/rm -f $(NAME)
 	make -C$(FTPATH) fclean
-	make -C$(UNPATH) fclean
+	make -C.. fclean
 
 re: fclean $(NAME)
