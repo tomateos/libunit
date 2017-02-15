@@ -6,7 +6,7 @@
 #    By: tzhou <tzhou@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/10 19:51:18 by tzhou             #+#    #+#              #
-#    Updated: 2017/02/14 18:35:18 by tzhou            ###   ########.fr        #
+#    Updated: 2017/02/14 20:59:48 by tzhou            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,11 @@ LFLAGS = -L$(UNPATH) -lunit -L$(FTPATH) -lft
 
 STRLENSRC = 00_launcher.c 01_basic_test.c 02_null_test.c 03_large_test.c
 
-SRC = main.c $(addprefix strlen/, $(STRLENSRC))
+MEMSETSRC = 00_launcher.c 01_basic_test.c 02_null_test.c
+
+SRC = main.c \
+	  $(addprefix strlen/, $(STRLENSRC)) \
+	  $(addprefix memset/, $(MEMSETSRC))
 
 all: $(NAME)
 
