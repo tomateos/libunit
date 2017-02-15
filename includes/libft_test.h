@@ -6,7 +6,7 @@
 /*   By: tzhou <tzhou@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/14 14:40:07 by tzhou             #+#    #+#             */
-/*   Updated: 2017/02/14 21:03:38 by tzhou            ###   ########.fr       */
+/*   Updated: 2017/02/14 21:40:07 by tzhou            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,16 +54,32 @@ int		strcmp_launcher(void);
 int		strncmp_launcher(void);
 
 int		isalpha_launcher(void);
+int		c_isalpha(int c);
+int		isalpha_basic_test(void);
 
 int		isalnum_launcher(void);
+int		c_isalnum(int c);
+int		isalnum_basic_test(void);
 
 int		isascii_launcher(void);
+int		c_isascii(int c);
+int		isascii_basic_test(void);
+
+int		isdigit_launcher(void);
+int		c_isdigit(int c);
+int		isdigit_basic_test(void);
 
 int		isprint_launcher(void);
+int		c_isprint(int c);
+int		isprint_basic_test(void);
 
 int		toupper_launcher(void);
+int		c_toupper(int c);
+int		toupper_basic_test(void);
 
 int		tolower_launcher(void);
+int		c_tolower(int c);
+int		tolower_basic_test(void);
 
 int		strsplit_launcher(void);
 

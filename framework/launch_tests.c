@@ -6,14 +6,12 @@
 /*   By: tzhou <tzhou@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/13 17:45:41 by tzhou             #+#    #+#             */
-/*   Updated: 2017/02/14 05:10:22 by tzhou            ###   ########.fr       */
+/*   Updated: 2017/02/14 21:47:23 by tzhou            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libunit.h"
 
-
-#include <stdio.h>
 static void	get_result(int code)
 {
 	if (code == 0)
