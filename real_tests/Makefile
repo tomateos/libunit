@@ -6,7 +6,7 @@
 #    By: tzhou <tzhou@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/10 19:51:18 by tzhou             #+#    #+#              #
-#    Updated: 2017/02/14 23:23:52 by tzhou            ###   ########.fr        #
+#    Updated: 2017/03/04 01:44:08 by tzhou            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,8 @@ LIBUNIT = libunit.a
 
 LIBFT = libft.a
 
-FTPATH = /nfs/2016/t/tzhou/Projects/RUSHES/LIBUNIT/libunit/libft/
+#Change this path to the location of libft
+FTPATH = ~/libunit/libft/
 
 CFLAGS = -Wall -Werror -Wextra
 
